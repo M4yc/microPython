@@ -79,6 +79,20 @@ Coloque a seguinte configuração:
 
 Em **Device path:** Coloque a porta COM que você está usando
 
+E pronto já está tudo configurado.
+
+Faça um teste com programa simples como o Blink
+
+    from machine import Pin
+    from time import sleep
+
+    led = Pin(2, Pin.OUT)
+    led.value(False)
+
+    while True:
+        led.value(not led.value())
+        sleep(0.1)
+
 ## Procedimentos:
 * Fazer o download do Firmaware para a sua placa 
 * Fazer o download do uPyCraft 
