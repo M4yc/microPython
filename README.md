@@ -60,8 +60,7 @@ Clique em OK e aguarde a gravação do firmware:
 
 ![img_13.png](img_13.png)
 
-
-
+Quando terminar sua placa nodeMCU já está pronta para ser programada em **MicroPython**
 
 
 ## Procedimentos:
