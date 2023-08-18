@@ -1,7 +1,7 @@
 # Instalação e configuração do MicroPython no ESP8266
 
 ---
-![img_2.png](img_2.png)
+![img_2.png](img/img_2.png)
 
 ---
 # MicroPython
@@ -26,25 +26,25 @@ Para conseguir programar a nodeMCU ou outra placa com ESP8266 é necessário atu
 Baixe o firmware no site do [MicroPython.](https://micropython.org/download/)
 
 Procure o firmware ideal para a sua placa este da imagem é para o meu caso pode não ser o seu por isso fique atento.
-![img_3.png](img_3.png)
+![img_3.png](img/img_3.png)
 
 Agora vamos usar o uPyCraft para gravar o firmware na placa.
 
 Abra o uPyCraft e vá em **Tools > Serial** e selecione a porta Serial para a sua placa.No meu caso foi a COM3:
 
-![img_4.png](img_4.png)
+![img_4.png](img/img_4.png)
 
 Selecione a placa em **Tools > board:**
 
-![img_5.png](img_5.png)
+![img_5.png](img/img_5.png)
 
 Agora acesse **Tools > BurnFirmware:**
 
-![img_6.png](img_6.png)
+![img_6.png](img/img_6.png)
 
 Vai abrir está janela:
 
-![img_7.png](img_7.png)
+![img_7.png](img/img_7.png)
 
 Agora você vai fazer a configuração para a sua placa.
 No meu caso vai ficar assim:
@@ -54,11 +54,11 @@ No meu caso vai ficar assim:
 * com: **COM3**
 * Firmware: Selecione **"Users"** e então selecione o arquivo que você baixou do site do MicroPython.
 
-![img_8.png](img_8.png)
+![img_8.png](img/img_8.png)
 
 Clique em OK e aguarde a gravação do firmware:
 
-![img_13.png](img_13.png)
+![img_13.png](img/img_13.png)
 
 Quando terminar sua placa nodeMCU já está pronta para ser programada em **MicroPython**
 
