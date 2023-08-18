@@ -65,7 +65,19 @@ Quando terminar sua placa nodeMCU já está pronta para ser programada em **Micr
 # Configurando o Pycharm
 Abra o PyCharm vá em **File > Settings** 
 
+![img_14.png](img/img_14.png)
+
 Depois vá até **Plugins** e pesquise por MicroPython e clique em **Install** e reinicie o programa para ser efetizado 
+
+![img_15.png](img/img_15.png)
+
+Depois de reiniciar o programa vá em **File > Settings > Languages & Frameworks > MicroPython**
+
+Coloque a seguinte configuração:
+
+![img_16.png](img/img_16.png)
+
+Em **Device path:** Coloque a porta COM que você está usando
 
 ## Procedimentos:
 * Fazer o download do Firmaware para a sua placa 
