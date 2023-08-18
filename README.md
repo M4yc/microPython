@@ -63,6 +63,9 @@ Clique em OK e aguarde a gravação do firmware:
 Quando terminar sua placa nodeMCU já está pronta para ser programada em **MicroPython**
 
 # Configurando o Pycharm
+Abra o PyCharm vá em **File > Settings** 
+
+Depois vá até **Plugins** e pesquise por MicroPython e clique em **Install** e reinicie o programa para ser efetizado 
 
 ## Procedimentos:
 * Fazer o download do Firmaware para a sua placa 
