@@ -6,4 +6,4 @@ led.value(False)
 
 while True:
     led.value(not led.value())
-    sleep(0.1)
+    sleep(1.5)
