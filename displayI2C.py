@@ -1,13 +1,29 @@
-from lcd_i2c import LCD_I2C
-from machine import I2C, Pin
+import machine
+from machine import Pin, SoftI2C
+from lcd_api import LcdApi
+from i2c_lcd import I2cLcd
+from time import sleep
 
-#PCF8574 on 0x50
-I2C_ADDR = 0x27 #DEC 39, HEX 0x27
-NUM_ROWS = 2
-NUM_COLS = 16
+I2C_ADDR = 0x27
+totalRows = 2
+totalColumns = 16
 
-i2c = I2C(0, scl=Pin(20),sda=Pin(19), freq=800000)
-lcd = LCD_I2C(addr=I2C_ADDR,cols=NUM_COLS,rows=NUM_ROWS, i2c=i2c)
+i2c = SoftI2C(scl=Pin(5), sda=Pin(4), freq=10000)     #initializing the I2C method for ESP32
+#i2c = I2C(scl=Pin(5), sda=Pin(4), freq=10000)       #initializing the I2C method for ESP8266
 
-lcd.begin()
-lcd.print("hello word")
+lcd = I2cLcd(i2c, I2C_ADDR, totalRows, totalColumns)
+
+while True:
+    lcd.putstr("I2C LCD Tutorial")
+    sleep(2)
+    lcd.clear()
+    lcd.putstr("Lets Count 0-10!")
+    sleep(2)
+    lcd.clear()
+    for i in range(11):
+        lcd.putstr(str(i))
+        sleep(1)
+        lcd.clear()
+    lcd.putstr("Funcionou")
+    sleep(2)
+    lcd.clear()
