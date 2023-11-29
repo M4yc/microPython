@@ -1,9 +1,10 @@
 from machine import Pin
-from time import sleep
+import time
 
-led = Pin(2, Pin.OUT)
-led.value(False)
+led = Pin(25, Pin.OUT)
 
 while True:
-    led.value(not led.value())
-    sleep(0.5)
+    led(1)
+    time.sleep(1)
+    led(0)
+    time.sleep(1)
