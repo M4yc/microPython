@@ -1,26 +1,28 @@
 import time
-from machine import Pin, SoftI2C, ADC
-from lib_lcd1602_2004_with_i2c import LCD
+from machine import Pin, ADC, I2C
+from lcd_api import LcdApi
+from pico_i2c_lcd import I2cLcd
 
-scl_pin = 5
-sda_pin = 4
-lcd = LCD(SoftI2C(scl=Pin(scl_pin), sda=Pin(sda_pin), freq=100000))
+# Configuração do LCD I2C
+i2c = I2C(0, scl=Pin(5), sda=Pin(4), freq=100000)
+lcd = I2cLcd(i2c, 0x27, 2, 16)
 
-lm35_pin = 0  # Pino analógico 0 no ESP8266
-adc = ADC(0)  # Cria um objeto ADC para o ADC0
+# Configuração do LM35
+lm35_pin = 17  # Pino analógico no Raspberry Pi Pico
+#adc = ADC(Pin(lm35_pin))
 
 try:
     while True:
-        lm35_value = adc.read_u16()  # Lê o valor analógico do LM35
+        #lm35_value = adc.read_u16()  # Lê o valor analógico do LM35
 
         # Converte o valor lido em temperatura (considerando 3.3V de referência e 12 bits de resolução)
-        temp_celsius = 100
+        #temp_celsius = (lm35_value / 65535.0) * 330.0
 
-        # Exibe a temperatura na saída serial
-        print("Temperatura: {:.2f} °C".format(temp_celsius))
+        # Exibe a temperatura no terminal
+        print("Temperatura: {:.2f} °C".format(100))
 
         # Exibe a temperatura no LCD
-        lcd.puts("Temperatura: {:.2f} °C".format(temp_celsius))
+        lcd.putstr("Temp: {:.2f} C".format(100))
 
         time.sleep(2)  # Espera 2 segundos para ler um novo valor no sensor
         lcd.clear()
